@@ -15,9 +15,14 @@ const Login = ({count, setCount}) => {
           marginTop: "20px",
         }}
       >
-        {count}
+        {count > 18 ? "You are allowed to vote" : "You are not allowed to vote"}
+        {" (Count: " + count + ")"}
       </p>
-      <button onClick={handleClick}>Count</button>
+      {count < 18 ? (
+        <button onClick={handleClick}>Increase</button>
+      ) : (
+        <button onClick={() => setCount((prev) => prev - 1)}>Decrease</button>
+      )}
     </div>
   );
 };
