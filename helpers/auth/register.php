@@ -34,7 +34,13 @@ if (
             echo json_encode([
                 "success" => false,
                 "status" => "error",
-                "message" => "Required data is missing"
+                "message" => "Required data is missing",
+                "data" => [
+                    "email" => $_POST["email"],
+                    "password"=> $_POST["password"],
+                    "full_name" => $_POST["Krishna"]
+
+                ]
             ]);
             exit();
         }
