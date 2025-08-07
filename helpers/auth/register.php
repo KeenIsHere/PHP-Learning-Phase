@@ -12,6 +12,23 @@ Step 3: Encrypt the password
 Step 4: Insert user data into database
 Step 5: If all steps are successful, return success response
 Step 6: If any step fails, return error response
+
+Login Realted Codes
+
+Step 1: Check if required data is present in request "Email" And "Password"
+Step 2: Check if user is registered > Error ("User not found")
+Step 3: Verify the password 
+        > Error ("Invalid Password") 
+        > Need To Pass ("Password","Hassesd Password")
+        > $user mysqli-fetch-assoc($result) to get user data When Ended Fetching data Returns None
+        $hassed_password = $user["password"];
+        Gives In Boolen (True:Fales)
+Step 4: If all steps are successful, 
+        > Generate a token,  $token = random_bytes(32); 
+        OR  $token = bin2hexrandom_bytes(32));
+        > Write Query inserting into DB and  "Insert Into token table with user_id and token"
+        > Return login success response with token (success: true , message: "Login successful", token: $token)
+
 */
 
 /*
