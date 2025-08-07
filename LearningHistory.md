@@ -2,6 +2,7 @@
 
 > **A comprehensive learning history documenting my journey in building a React API with PHP backend and MySQL database integration**
 
+
 [![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org)
@@ -17,6 +18,22 @@ This repository documents my learning journey in creating a full-stack applicati
 - **Backend**: PHP for server-side logic and API endpoints
 - **Database**: MySQL for data persistence
 - **Development Environment**: XAMPP for local development
+  
+## 📅 Register.php basics
+<img width="621" height="382" alt="image" src="https://github.com/user-attachments/assets/fcddfd78-ffd7-43fe-a82f-fc5c54fc01ab" />
+
+## 🛠️ Connection.php basics to Xampp Server MyPhpAdmin Database Connection
+<img width="621" height="382" alt="image" src="https://github.com/user-attachments/assets/fd1f777c-d2de-47fe-83aa-1c7219673b17" />
+
+## 🧪 Index.php basics UI Display
+<img width="621" height="382" alt="image" src="https://github.com/user-attachments/assets/417809ae-589a-45bd-80cb-4544c36f29a2" />
+
+## 🗂️ Showing Xampp Server Database User Table
+<img width="621" height="382" alt="image" src="https://github.com/user-attachments/assets/11d50b33-1953-4986-bfc2-4c12dfa91ebd" />
+
+## 🎯 Using Postman Platform For Backend API Testing
+<img width="621" height="353" alt="image" src="https://github.com/user-attachments/assets/5f5ae6d5-ee97-4c58-a458-099c27365538" />
+
 
 ### 📅 Learning Timeline
 
