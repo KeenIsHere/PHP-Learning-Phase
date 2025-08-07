@@ -1,5 +1,8 @@
 <?php 
 
+include("../connection.php");
+// Check if the connection was successful
+
 //registration related codes/logics 
 /* 
 
@@ -20,6 +23,8 @@ DELETE
 
 */
 
+try{
+
 
 
 if (
@@ -30,18 +35,82 @@ if (
         )
         ) {
 
+            $email = $_POST ["email"] ;
+            $password = $_POST ["password"] ;
+            $full_name = $_POST ["full_name"] ;
+
+            // $sql = "select * from users where email = ?";
+            // $sql = $conn->prepare($sql);
+            // $sql->bindParam("$", $email, PDO::PARAM_
+
+            $sql = "select * from users where email = '$email'";
+
+            $result = mysqli_query($conn, $sql);
+            
+            
+
+            if (!$result) {
+                echo json_encode([
+                    "success" => false,
+                    "status" => "error",
+                    "message" => "Database query failed",
+                    "data" => []
+                ]);
+                exit();
+            }
+
+            $count = mysqli_num_rows($result);
+
+            if ($count > 0) {
+                echo json_encode([
+                    "success" => false,
+                    "status" => "error",
+                    "message" => "User already exists",
+                    "data" => [
+                        "email" => $email,
+                        "full_name" => $full_name
+                    ]
+                ]);
+                exit();
+            }
+
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO users (email, password, full_name) VALUES ('$email', '$hashed_password', '$full_name')";
+
+            $result = mysqli_query($conn, $sql);
+            if (!$result) {
+                echo json_encode([
+                    "success" => false,
+                    "status" => "error",
+                    "message" => "Failed to register query user",
+                    "data" => []
+                ]);
+                exit();
+            }
+
+            echo json_encode([ 
+                "success" => true,
+                "status" => "success",
+                "message" => "User registered successfully",
+           
+            ]);
+            exit();
+
         }  else {
             echo json_encode([
                 "success" => false,
                 "status" => "error",
                 "message" => "Required data is missing",
-                "data" => [
-                    "email" => $_POST["email"],
-                    "password"=> $_POST["password"],
-                    "full_name" => $_POST["Krishna"]
-
-                ]
+               
             ]);
             exit();
         }
 // Include the database connection file
+    }
+catch (Exception $e) {
+    echo json_encode([
+        "success"=> false,
+        "status"=> $e->getMessage()
+        ]);
+}
