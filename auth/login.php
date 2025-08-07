@@ -2,7 +2,6 @@
 
 include '../helpers/connection.php';
 
-
 if (
     isset(
     $_POST['email'],
