@@ -10,17 +10,17 @@ Login Related Code Logic:
 Step 1: Check if required data is present in request "Email" And "Password"
 Step 2: Check if user is registered > Error ("User not found")
 Step 3: Verify the password
-         > Error ("Invalid Password")
-         > Need To Pass ("Password","Hashed Password")
-         > $user = mysqli_fetch_assoc($result) to get user data
-         > When ended fetching data returns None
-         > $hashed_password = $user["password"];
-         > password_verify() gives Boolean (True/False)
+> Error ("Invalid Password")
+> Need To Pass ("Password","Hashed Password")
+> $user = mysqli_fetch_assoc($result) to get user data
+> When ended fetching data returns None
+> $hashed_password = $user["password"];
+> password_verify() gives Boolean (True/False)
 Step 4: If all steps are successful,
-         > Generate a token, $token = random_bytes(32);
-         > OR $token = bin2hex(random_bytes(32));
-         > Write Query inserting into DB "Insert Into token table with user_id and token"
-         > Return login success response with token (success: true, message: "Login successful", token: $token)
+> Generate a token, $token = random_bytes(32);
+> OR $token = bin2hex(random_bytes(32));
+> Write Query inserting into DB "Insert Into token table with user_id and token"
+> Return login success response with token (success: true, message: "Login successful", token: $token)
 */
 
 try {
