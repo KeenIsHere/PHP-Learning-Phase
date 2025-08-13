@@ -11,9 +11,6 @@ if (
 )
 ) {
 
-
-
-
     $email = $_POST['email'];
     $password = $_POST['password'];
     $full_name = $_POST['full_name'];
