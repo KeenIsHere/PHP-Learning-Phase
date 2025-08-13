@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include("../connection.php");
+include("../helpers/connection.php");
 
 // Check if the database connection was successful
 // This ensures we can interact with the database before proceeding

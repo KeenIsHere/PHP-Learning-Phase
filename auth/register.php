@@ -1,6 +1,6 @@
 <?php 
 
-include("../connection.php");
+include("../helpers/connection.php");
 // Check if the connection was successful
 
 //registration related codes/logics 
