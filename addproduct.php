@@ -28,8 +28,23 @@ try {
     $description = $_POST['description'];
     $category_id = $_POST['category_id'];
 
+    // Check if category exists
+$cat_check_sql = "SELECT category_id FROM category WHERE category_id = '$category_id' LIMIT 1";
+    $cat_check_result = mysqli_query($conn, $cat_check_sql);
+    if (!$cat_check_result || mysqli_num_rows($cat_check_result) == 0) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Category does not exist. Please add the category first or use an existing category.'
+            // 'message' => 'You don\'t have a girlfriend... I mean, you don\'t have admin rights! 💔'
 
+        ]);
+        die();
+    }
 
+    $product_name = $_POST['product_name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $category_id = $_POST['category_id'];
 
     if (
         !isset(
@@ -108,6 +123,8 @@ $sql = "INSERT INTO product (product_name, price, description, category_id, imag
 } catch (Exception $e) {
     echo json_encode([
         'success' => false,
-        'message' => $e->getMessage()
+        'status' => $e->getMessage(),
+        'message' => 'Catch Output Whats Wrong Find Out'
+
     ]);
 }
