@@ -23,13 +23,6 @@ try {
         die();
     }
 
-    $product_name = $_POST['product_name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $category_id = $_POST['category_id'];
-
-
-
 
     if (
         !isset(
@@ -46,6 +39,14 @@ try {
         ]);
         die();
     }
+
+
+    $product_name = $_POST['product_name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $category_id = $_POST['category_id'];
+
+
 
 
     $image = $_FILES['image'];
