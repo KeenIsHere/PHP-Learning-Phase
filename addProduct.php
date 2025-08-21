@@ -89,7 +89,7 @@ try {
         die();
     }
 
-    $sql = "INSERT INTO products (product_title, price, description, category_id, image_url) VALUES ('$product_name', '$price', '$description', '$category_id', '$image_path')";
+    $sql = "INSERT INTO product (product_name, price, description, category_id, image) VALUES ('$product_name', '$price', '$description', '$category_id', '$image')";
 
     $result = mysqli_query($con, $sql);
 

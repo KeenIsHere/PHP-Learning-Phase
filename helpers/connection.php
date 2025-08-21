@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: *");
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "react_ecom";
+$db = "reactEcom";
 $port = 3306;
 
 $con = mysqli_connect($host, $user, $pass, $db, $port);

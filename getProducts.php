@@ -22,7 +22,7 @@ try {
         die();
     }
 
-    $sql = "SELECT * FROM products join categories on products.category_id = categories.category_id";
+    $sql = "SELECT * FROM product join category on product.category_id = category.category_id";
 
     $result = mysqli_query($con, $sql);
 

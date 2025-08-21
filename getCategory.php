@@ -22,7 +22,7 @@ try {
         die();
     }
 
-    $sql = "SELECT * FROM categories";
+    $sql = "SELECT * FROM category";
 
     $result = mysqli_query($con, $sql);
 
@@ -30,7 +30,7 @@ try {
 
     echo json_encode([
         'success' => true,
-        'message' => 'Categories fetched successfully',
+        'message' => 'Category fetched successfully',
         'data' => $categories
     ]);
 
